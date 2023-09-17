@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box; /* tamaño de caja */
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container >*{  /* contenedor de */
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.header{
+    grid-area: header;
+    background-color: #ffffff;
+}
+
+.imgencabezado{
+    float: left;
+    margin-left: 30px;
+}
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+.main{
+    grid-area: main;
+    background-color: bisque;
+    border: 1px solid black;
+}
+
+li{
+    display: inline-block;
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+a:hover{
+    background-color: whitesmoke;
+}
+
+.slider{
+    grid-area: slider;
+    background-color: #e5eceec2;
+    border: 1px solid black;
+}
+
+.img{
+    width: 410px;
+}
+
+#imagenes{
+    width: 410px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+#imagenes ul{
+    list-style: none;
+    width: 2150px;
+    display: flex;
+
+    animation: slide 20s infinite alternate;
+}
+
+@keyframes slide{
+    0%{margin-left: 0px;}
+    15%{margin-left: 0px;}
+
+    20%{margin-left: -430px;}
+    35%{margin-left: -430px;}
+
+    40%{margin-left: -860px;}
+    55%{margin-left: -860px;}
+
+    60%{margin-left: -1290px;}
+    75%{margin-left: -1290px;}
+
+    80%{margin-left: -1720px;}
+    100%{margin-left: -1720px;}
+}
+
+.article{
+    grid-area: article;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+}
+
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.aside{
+    grid-area: aside;
+    background-color: rgb(247, 242, 242);
+    border: 1px solid black;
+}
+
+.paside{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 40px;
+}
+
+.footer {
+    grid-area: footer;
+    background-image: url(/imagenes/pie_copia.jpg);
+}
+
+
+.grid-container {
+    display: grid;
+    gap: 5px;
+    grid-template-areas: 
+        "header"
+        "main"
+        "slider"
+        "article"
+        "aside"
+        "footer"
+        ;
+}
+
+@media (min-width: 1080px){
+    .grid-container {
+        grid-template: 
+            "header header header" 170px 
+            "main main main" 60px    
+            "slider slider slider" 300px
+            "article article aside"150px
+            "footer footer footer" 140px /
+            200px auto 200px;
+    }
+    }
